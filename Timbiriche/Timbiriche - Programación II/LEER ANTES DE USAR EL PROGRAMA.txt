@@ -1,0 +1,46 @@
+Clave de la empresa para cambiar el dia o codigo ---->>>> 12345678
+
+
+
+
+
+-------------------------------------------------Descripcion de las jugadas o estrategias--------------------------------------------
+
+Aleatorio:
+		
+		Primeramente, se escogen posiciones con numero de fila y columna random(5 oportunidades). Si no encuentra espacios en estas, recorre la matriz
+hasta encontrar una posicion libre y no nula. Esto debido a que si nos basamos en numeros random el tiempo de busqueda de un espacio puede ser
+indeterminado. Otro aspecto fundamental, jugando aleatorio hay riesgo de jugar de manera tal que podriamos darle la oportunidad de capturar un cuadro al oponente.
+Sin embargo, no se pierde la escencia del juego la cual es capturar cuadros.
+
+
+Cercano:
+
+		Sencillamente, se juega de manera cercana a un punto en el que se encuentre el oponente.
+
+
+Periferico:
+
+		Tal y como se redacta en el enunciado, primeramente empieza jugando en la periferia del campo. Esto sin perder el objetivo
+del juego el cual es capturar cuadros.
+
+
+Islas:
+
+	Empiza creando islas o cuadros "grandes" para que al llegar a los momentos finales de la partida empiece una captura de cuadros.
+
+Central:
+
+	Se juega de manera central, es decir, omitiendo la periferia y los espacios uniformes respecto al campo.
+
+
+NOTA IMPORTANTE:
+
+En todas las estrategias nunca se pierde el objetivo del juego el cual es la captura de cuadros. Por lo tanto, se añadió la funcionalidad de
+realizar un analisis del campo y en caso de que, por ejemplo, para el turno del jugador 1 este realice una jugada que deja a solo una linea la captura
+de un cuadro, en la siguiente jugada del jugador 2, sea cual sea, capturará este cuadro.
+
+Otro de los objetivos es no permitir la captura de cuadros, por lo que se añadieron funcionalidades de "analisis de riesgo". Es decir, en una jugada que 
+realice cualquiera de los dos jugadores se analizara si la linea a colocar posee riesgo de que en la siguiente jugada se capture como un cuadro, de esta manera,
+omite colocar la linea en este espacio y busca otro. No siempre se puede evitar esto, por lo que es comun que los cuadros se empiecen a capturar a finales de la partida.
+Esta funcionalidad se omite en la estrategia de Aleatorio.
